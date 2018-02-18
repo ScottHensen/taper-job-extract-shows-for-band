@@ -1,10 +1,7 @@
 package io.taper.batch.extract.shows4band;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -46,7 +43,7 @@ public class ExtractShowsForBand implements CommandLineRunner {
 		Map<String, String> urlParms = new HashMap<>();
 		urlParms.put("q",collection); 
 		urlParms.put("fields","addeddate,identifier,date,num_reviews,avg_rating,downloads,title,mediatype");
-		urlParms.put("sorts","addeddate desc,identifier asc");
+		urlParms.put("sorts","addeddate asc,identifier asc");
 
 		Files.copy(
 				HttpHelper.getStream( buildUrl(urlParms) ), 
