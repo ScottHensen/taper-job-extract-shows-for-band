@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "io.path",
+    "type": "java.lang.String",
+    "description": "Path to the directory holding i/o files."
+  },
+  {
+    "name": "io.scrapeUrlBase",
+    "type": "java.lang.String",
+    "description": "The base URL for the archive.org scrape service."
+  },
+  {
+    "name": "io.scrapeUrlQueryKey",
+    "type": "java.lang.String",
+    "description": "The query (Q) url parm takes a key/value; io.scrapeUrlQueryKey refers to the key in the key/value parm."
+  },
+  {
+    "name": "io.scrapeUrlFields",
+    "type": "java.lang.String",
+    "description": "A list fields to be returned by the scrape service."
+  },
+  {
+    "name": "io.scrapeUrlSorts",
+    "type": "java.lang.String",
+    "description": "A list fields and asc|desc designations to tell the scrape service how to sort the data before it is returned."
+  },
+  {
+    "name": "io.metadataUrlBase",
+    "type": "java.lang.String",
+    "description": "The base URL for the archive.org metadata service."
+  }
+]}
