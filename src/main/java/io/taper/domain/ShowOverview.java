@@ -3,7 +3,7 @@ package io.taper.domain;
 import lombok.Data;
 
 @Data
-public class ShowMetadata {
+public class ShowOverview {
 
 	private String date;
 	private String identifier;

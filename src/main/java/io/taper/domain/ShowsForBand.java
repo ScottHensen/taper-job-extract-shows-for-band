@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ShowsForBand {
 
-	private List<ShowMetadata> items;
+	private List<ShowOverview> items;
 	private int count;
 	private int total;
 	
