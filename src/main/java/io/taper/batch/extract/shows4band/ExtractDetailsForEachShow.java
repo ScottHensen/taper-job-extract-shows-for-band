@@ -63,6 +63,7 @@ public class ExtractDetailsForEachShow implements CommandLineRunner {
 			String tempFileName = pathName + bandName + "_" + item.getIdentifier() + ".json";
 			try {
 				ShowDetails showDetails = getShowMetadata(mapper, item);
+				
 				mapObjectToFile(mapper, showDetails, tempFileName);
 				log.debug("OUT file = " + tempFileName);
 				TimeUnit.SECONDS.sleep(1);	//is this necessary? i don't want to look like a ddos attempt.
@@ -89,9 +90,12 @@ public class ExtractDetailsForEachShow implements CommandLineRunner {
 			throws IOException 
 	{
 		URL url = new URL(ioConfig.getMetadataUrlBase() + item.getIdentifier());	
-		ShowDetails bar = mapper.readValue(url, ShowDetails.class);
-		//log.debug("metadata = " + bar);
-		return bar;
+		ShowDetails showDetails = mapper.readValue(url, ShowDetails.class);
+		showDetails.setAvg_rating(item.getAvg_rating());
+		showDetails.setDownloads(item.getDownloads());
+		showDetails.setNum_reviews(item.getNum_reviews());
+		//log.debug("showDetails = " + showDetails);
+		return showDetails;
 	}
 
 	private void mapObjectToFile(ObjectMapper mapper, Object object, String fileName) 
