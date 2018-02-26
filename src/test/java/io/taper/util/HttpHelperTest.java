@@ -7,10 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-
-//import org.apache.commons.io.IOUtils; 
 
 public class HttpHelperTest {
 
@@ -19,6 +16,7 @@ public class HttpHelperTest {
 		// Given
 		URL url = new URL("https://this.is.an.unknown.url.io");
 		// When
+		@SuppressWarnings("unused")
 		InputStream response = HttpHelper.getStream(url);
 	}
 	
