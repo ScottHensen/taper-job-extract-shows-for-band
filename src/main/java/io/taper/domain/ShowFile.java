@@ -11,6 +11,4 @@ public class ShowFile {
 	private String track;
 	private String format;
 	private String title;
-	private String creator;
-	private String album;
 }
